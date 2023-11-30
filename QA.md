@@ -45,15 +45,15 @@ By adopting this method, the team ensured a robust, consistent, and efficient Qu
 
 ## QA Process:
 Describe your QA process and include the SQL queries used to execute it.
-
+```
 -- LANGUAGE: SQL
 -- Database: ecommerce
 -- Author: Alejandro Castellanos
 -- GitHub: k2jac9
 -- Tools: PostgreSQL, pgAdmin4, vsCode, Gihut copilot, Excel
--- Date: 2021-10-04
--- Time: 18:00:00 America/Toronto Timezone abbreviated as EDT (Eastern Daylight Time) UTC -4:00
--- Project SQL
+-- Date: 2023-11-24
+-- Time: 11:11:11🕚 America/Toronto Timezone abbreviated as EDT (Eastern Time) UTC -5:00
+-- Final Project SQL
 -- Description: This is a project to create a database called ecommerce and load data into 5 tables and create 5 temporary tables with the proper data types assigned to them
 
 -- 1. Create a database called ecommerce
@@ -250,4 +250,78 @@ WHERE
     table_schema = 'pg_temp_5'
 ORDER BY 
     table_name, ordinal_position;
+```
+## Sistematic QA analysis leveraging dynamic SQL using PostgreSQL
+```
+import psycopg2
 
+# Database connection parameters - update these with your database information
+dbname = "postgres"  # Typically, you can use 'postgres' to list other databases
+user = "your_username"
+password = "your_password"
+host = "your_host"
+
+# Connect to your postgres DB
+conn = psycopg2.connect(dbname=dbname, user=user, password=password, host=host)
+
+# Open a cursor to perform database operations
+cur = conn.cursor()
+
+try:
+    # Execute a query to retrieve all database names
+    cur.execute("SELECT datname FROM pg_database WHERE datistemplate = false;")
+    databases = cur.fetchall()
+
+    for db in databases:
+        print(db[0])
+
+finally:
+    # Close the cursor and the connection
+    cur.close()
+    conn.close()
+
+    # Importing necessary library
+import pandas as pd
+
+# Function to get total count, null values, non-distinct values, and data types for each column in a DataFrame
+def get_stats(df):
+    stats = pd.DataFrame({
+        'Column': df.columns,
+        'Data Type': df.dtypes.values,
+        'Total Records': len(df),
+        'Null Values': df.isnull().sum().values,
+        'Non-Distinct Values': df.nunique().values
+    })
+    return stats
+
+# Function to display statistics with a table name
+def display_stats_with_table_name(stats, table_name):
+    print(f"Statistics for {table_name} Table:")
+    display(stats)
+    print("\n")
+
+# Function to drop columns with total records equal to null values
+def drop_columns_with_null_records(df):
+    return df.drop(df.columns[df.isnull().sum() == len(df)], axis=1)
+
+# Get statistics for each table and drop columns
+all_sessions = drop_columns_with_null_records(all_sessions)
+analytics = drop_columns_with_null_records(analytics)
+products = drop_columns_with_null_records(products)
+sales_by_sku = drop_columns_with_null_records(sales_by_sku)
+sales_report = drop_columns_with_null_records(sales_report)
+
+# Get updated statistics for each table
+all_sessions_stats = get_stats(all_sessions)
+analytics_stats = get_stats(analytics)
+products_stats = get_stats(products)
+sales_by_sku_stats = get_stats(sales_by_sku)
+sales_report_stats = get_stats(sales_report)
+
+# Display the updated statistics with table names
+display_stats_with_table_name(all_sessions_stats, "All Sessions")
+display_stats_with_table_name(analytics_stats, "Analytics")
+display_stats_with_table_name(products_stats, "Products")
+display_stats_with_table_name(sales_by_sku_stats, "Sales by SKU")
+display_stats_with_table_name(sales_report_stats, "Sales Report")
+```
