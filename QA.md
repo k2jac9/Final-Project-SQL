@@ -325,3 +325,79 @@ display_stats_with_table_name(products_stats, "Products")
 display_stats_with_table_name(sales_by_sku_stats, "Sales by SKU")
 display_stats_with_table_name(sales_report_stats, "Sales Report")
 ```
+Statistics for All Sessions Table:
+Column	Data Type	Total Records	Null Values	Non-Distinct Values
+0	fullVisitorId	uint64	15134	0	14223
+1	channelGrouping	object	15134	0	7
+2	time	int64	15134	0	9600
+3	country	object	15134	0	136
+4	city	object	15134	0	266
+5	totalTransactionRevenue	float64	15134	15053	72
+6	transactions	float64	15134	15053	1
+7	timeOnSite	float64	15134	3300	1266
+8	pageviews	int64	15134	0	29
+9	sessionQualityDim	float64	15134	13906	44
+10	date	int64	15134	0	366
+11	visitId	int64	15134	0	14556
+12	type	object	15134	0	2
+13	productQuantity	float64	15134	15081	8
+14	productPrice	int64	15134	0	141
+15	productRevenue	float64	15134	15130	4
+16	productSKU	object	15134	0	536
+17	v2ProductName	object	15134	0	471
+18	v2ProductCategory	object	15134	0	74
+19	productVariant	object	15134	0	11
+20	currencyCode	object	15134	272	1
+21	transactionRevenue	float64	15134	15130	4
+22	transactionId	object	15134	15125	9
+23	pageTitle	object	15134	1	268
+24	pagePathLevel1	object	15134	0	11
+25	eCommerceAction_type	int64	15134	0	7
+26	eCommerceAction_step	int64	15134	0	3
+27	eCommerceAction_option	object	15134	15103	3
+
+
+Statistics for Analytics Table:
+Column	Data Type	Total Records	Null Values	Non-Distinct Values
+0	visitNumber	int64	4301122	0	222
+1	visitId	int64	4301122	0	148642
+2	visitStartTime	int64	4301122	0	148853
+3	date	int64	4301122	0	93
+4	fullvisitorId	uint64	4301122	0	120018
+5	channelGrouping	object	4301122	0	8
+6	socialEngagementType	object	4301122	0	1
+7	units_sold	float64	4301122	4205975	134
+8	pageviews	float64	4301122	72	128
+9	timeonsite	float64	4301122	477465	3269
+10	bounces	float64	4301122	3826283	1
+11	revenue	float64	4301122	4285767	5269
+12	unit_price	int64	4301122	0	1442
+
+
+Statistics for Products Table:
+Column	Data Type	Total Records	Null Values	Non-Distinct Values
+0	SKU	object	1092	0	1092
+1	name	object	1092	0	313
+2	orderedQuantity	int64	1092	0	224
+3	stockLevel	int64	1092	0	262
+4	restockingLeadTime	int64	1092	0	27
+5	sentimentScore	float64	1092	1	17
+6	sentimentMagnitude	float64	1092	1	20
+
+
+Statistics for Sales by SKU Table:
+Column	Data Type	Total Records	Null Values	Non-Distinct Values
+0	productSKU	object	462	0	462
+1	total_ordered	int64	462	0	60
+
+
+Statistics for Sales Report Table:
+Column	Data Type	Total Records	Null Values	Non-Distinct Values
+0	productSKU	object	454	0	454
+1	total_ordered	int64	454	0	60
+2	name	object	454	0	237
+3	stockLevel	int64	454	0	219
+4	restockingLeadTime	int64	454	0	26
+5	sentimentScore	float64	454	0	16
+6	sentimentMagnitude	float64	454	0	20
+7	ratio	float64	454	78	244
