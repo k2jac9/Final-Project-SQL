@@ -11,7 +11,7 @@ During the Data Exploration and cleaning process we developed a workflow that he
 Queries: Below, provide the SQL queries you used to clean your data.
 
 Data Cleaning and Exploration
-
+```
 -- Check the first few rows of each table to get an overview SELECT * FROM temp_all_sessions LIMIT 10; SELECT * FROM temp_analytics LIMIT 10; SELECT * FROM temp_products LIMIT 10; SELECT * FROM temp_sales_by_sku LIMIT 10; SELECT * FROM temp_sales_report LIMIT 10;
 
 -- Check the number of rows in each table SELECT COUNT() FROM temp_all_sessions;
@@ -134,3 +134,4 @@ SELECT sr.productSKU AS sales_report_sku, ss.productSKU AS sales_by_sku_sku FROM
 SELECT (SELECT COUNT(DISTINCT productSKU) FROM temp_sales_report) AS distinct_skus_sales_report, (SELECT COUNT(DISTINCT productSKU) FROM temp_sales_by_sku) AS distinct_skus_sales_by_sku, COUNT(DISTINCT sr.productSKU) AS matching_skus FROM temp_sales_report sr JOIN temp_sales_by_sku ss ON sr.productSKU = ss.productSKU;
 
 -- 454. It sugges a 100% match between temp_sales_report and temp_sales_by_sku for the productSKU column.
+```
