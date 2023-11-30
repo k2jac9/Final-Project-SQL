@@ -251,7 +251,7 @@ WHERE
 ORDER BY 
     table_name, ordinal_position;
 ```
-## Sistematic QA analysis leveraging dynamic SQL using PostgreSQL
+## Sistematic QA analysis leveraging dynamic SQL using PostgreSQL client
 ```
 import psycopg2
 
