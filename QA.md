@@ -324,7 +324,7 @@ display_stats_with_table_name(analytics_stats, "Analytics")
 display_stats_with_table_name(products_stats, "Products")
 display_stats_with_table_name(sales_by_sku_stats, "Sales by SKU")
 display_stats_with_table_name(sales_report_stats, "Sales Report")
-```
+
 Statistics for All Sessions Table:
 Column	Data Type	Total Records	Null Values	Non-Distinct Values
 0	fullVisitorId	uint64	15134	0	14223
@@ -401,3 +401,4 @@ Column	Data Type	Total Records	Null Values	Non-Distinct Values
 5	sentimentScore	float64	454	0	16
 6	sentimentMagnitude	float64	454	0	20
 7	ratio	float64	454	78	244
+```
