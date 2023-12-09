@@ -35,7 +35,9 @@ SELECT country, city, SUM(totaltransactionrevenue) as total_revenue FROM all_ses
 
 -- The results are the same as using TempAllSessions indicating data integritry and that the values of the top cities are not affected by the QA fix.
 ```
-Answer: "country" "city" "total_revenue" "United States" "San Francisco" 1,564,320,000 "Israel" "Tel Aviv-Yafo" 602,000,000 "Australia" "Sydney" 358,000,000 "Canada" "Toronto" 82,160,000 "Switzerland" "Zurich" 16,990,000
+Answer:
+
+"country" "city" "total_revenue" "United States" "San Francisco" 1,564,320,000 "Israel" "Tel Aviv-Yafo" 602,000,000 "Australia" "Sydney" 358,000,000 "Canada" "Toronto" 82,160,000 "Switzerland" "Zurich" 16,990,000
 
 ## Question 2: What is the average number of products ordered from visitors in each city and country?
 
@@ -57,7 +59,9 @@ SELECT cr.country, cr.city, COUNT(DISTINCT cr.v2ProductCategory) AS distinct_cat
 
 -- Identifying the product category with the highest overall order count Answer: -- Home/Apparel/Men's/Men's-T-Shirts/ SELECT tas.v2ProductCategory, COUNT(*) AS total_order_count FROM temp_all_sessions tas WHERE tas.v2ProductCategory IS NOT NULL GROUP BY tas.v2ProductCategory ORDER BY total_order_count DESC LIMIT 1;
 ```
-Answer: Home/Apparel/Men's/Men's-T-Shirts/
+Answer: 
+
+Home/Apparel/Men's/Men's-T-Shirts/
 
 ## Question 4: What is the top-selling product from each city/country? Can we find any pattern worthy of noting in the products sold?
 ```
@@ -77,7 +81,9 @@ Answer:
 ```
 SQL Queries: SELECT country, city, SUM(totaltransactionrevenue) AS total_revenue FROM temp_all_sessions WHERE totaltransactionrevenue IS NOT NULL GROUP BY country, city ORDER BY total_revenue DESC;
 ```
-Answer: United States represent 92% of total revenue "country" "city" "total_revenue" "United States" "San Francisco" 1564320000 "United States" "Sunnyvale" 992230000 "United States" "Atlanta" 854440000 "United States" "Palo Alto" 608000000 "Israel" "Tel Aviv-Yafo" 602000000 "United States" "New York" 530360000 "United States" "Mountain View" 483360000 "United States" "Los Angeles" 479480000 "United States" "Chicago" 449520000 "United States" "Seattle" 358000000 "Australia" "Sydney" 358000000 "United States" "San Jose" 262380000 "United States" "Austin" 157780000 "United States" "Nashville" 157000000 "United States" "San Bruno" 103770000 "Canada" "Toronto" 82160000 "United States" "Houston" 38980000 "United States" "Columbus" 21990000 "Switzerland" "Zurich" 16990000
+Answer:
+
+United States represent 92% of total revenue "country" "city" "total_revenue" "United States" "San Francisco" 1564320000 "United States" "Sunnyvale" 992230000 "United States" "Atlanta" 854440000 "United States" "Palo Alto" 608000000 "Israel" "Tel Aviv-Yafo" 602000000 "United States" "New York" 530360000 "United States" "Mountain View" 483360000 "United States" "Los Angeles" 479480000 "United States" "Chicago" 449520000 "United States" "Seattle" 358000000 "Australia" "Sydney" 358000000 "United States" "San Jose" 262380000 "United States" "Austin" 157780000 "United States" "Nashville" 157000000 "United States" "San Bruno" 103770000 "Canada" "Toronto" 82160000 "United States" "Houston" 38980000 "United States" "Columbus" 21990000 "Switzerland" "Zurich" 16990000
 
 We can see the same cities from Q1 "country" "city" "total_revenue" "United States" "San Francisco" 1,564,320,000 "Israel" "Tel Aviv-Yafo" 602,000,000 "Australia" "Sydney" 358,000,000 "Canada" "Toronto" 82,160,000 "Switzerland" "Zurich" 16,990,000
 
