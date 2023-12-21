@@ -63,7 +63,7 @@ https://github.com/k2jac9/Final-Project-SQL/assets/5405628/8c8864a4-d40c-4344-be
 ![3](https://github.com/k2jac9/Final-Project-SQL/assets/5405628/ff5e5c99-2290-47d0-898d-d9ee61d7b17d)
 ![4](https://github.com/k2jac9/Final-Project-SQL/assets/5405628/0c8dbede-1c40-422b-9929-dfe891cffead)
 ![5](https://github.com/k2jac9/Final-Project-SQL/assets/5405628/661fcdfb-0e3d-42de-93b0-2cafe05672d4)
-![6](https://github.com/k2jac9/Final-Project-SQL/assets/5405628/ec5b0205-ed15-4184-96cb-b820de50570a)
+![6](https://github.com/k2jac9/Final-Project-SQL/assets/5405628/685db866-38ac-4c91-a06b-6fbbcb8e25ea)
 ![7](https://github.com/k2jac9/Final-Project-SQL/assets/5405628/45c441c4-f0d6-49d5-9424-f14d8532289b)
 
 
